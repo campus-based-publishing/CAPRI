@@ -5,17 +5,18 @@
  */
 
 /**
- * @file classes/CBPPlatform/rest/DigitalObject.inc.php
+ * @file CAPRI.php
  *
- * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ * Distributed under the GNU GPL v2
  *
- * @class CBPPlatformDigitalObject
+ * @class CAPRI
  * @ingroup CBPPlatform
  *
- * @brief Operations for CBP Platform Fedora digital object and REST (Fedora API-M) functionality.
+ * @brief Operations for CBPPlatform Fedora digital object and REST (Fedora API-M) functionality.
  */
 
-	import('classes.CBPPlatform.rest.Pest');
+	include('Pest.inc.php');
+	include('MetadataOptions.inc.php');
 
 	class CBPPlatformDigitalObject {
 		
@@ -408,7 +409,7 @@
 								if ($value['type'] != "cdata") {
 									if (isset($value['attributes'])) {
 										if (!in_array($option['parentAttributes'], $opentags) && array_key_exists($option['hasAttribute'], $value['attributes']) == false) {
-											//do nowt!
+											//do nothing!
 										} else {
 											if (isset($option['attribute'])) {
 												if (isset($value['attributes'])) {
